@@ -23,5 +23,36 @@
 
     $result = @pg_query($dbconn, "select * from aula_tasks where \"user\" = 'dudu'");
     ?>
+
+
+    <table>
+        <tr>
+            <th>Tarefa</th>
+            <th>Status</th>
+            <th>Executar ?</th>
+        </tr>
+        <tr>
+            <td>Teste 1</td>
+            <td>Não executado</td>
+            <td><a href="exec.php">Executar</a></td>
+        </tr>
+        <tr>
+            <td>Test 2</td>
+            <td>Não executado</td>
+            <td><a href="exec.php">Executar</a></td>
+        </tr>
+        <tr>
+            <td>Tarefa nE</td>
+            <td>Não executado</td>
+            <td><a href="exec.php">Executar</a></td>
+        </tr>
+        <tr>
+            <td>Teste 111</td>
+            <td>Executada</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <button>Cadastrar nova tarefa</button>
 </body>
 </html>

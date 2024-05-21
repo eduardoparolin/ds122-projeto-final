@@ -31,7 +31,21 @@
     </div>
 </div>
 
+<div class="timer">
+    <div id="minutes">
 
+    </div>:
+    <div id="seconds">
+
+    </div>
+</div>
+
+<button onclick="startCounter()">Start</button>
+<button onclick="pause()">Pause</button>
+<button onclick="stop()">Stop</button>
+
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="counter.js"></script>
 <!--<form action="action.php" method="post">-->
 <!--    <label for="name">Your name:</label>-->
 <!--    <input name="name" id="name" type="text">-->
@@ -41,5 +55,7 @@
 <!---->
 <!--    <button type="submit">Submit</button>-->
 <!--</form>-->
+
+
 </body>
 </html>
