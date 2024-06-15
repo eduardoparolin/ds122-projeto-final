@@ -22,6 +22,8 @@
     $dbconn = pg_connect($conn_string);
 
     $result = @pg_query($dbconn, "select * from aula_tasks where \"user\" = 'dudu'");
+
+
     ?>
 
 
@@ -31,28 +33,53 @@
             <th>Status</th>
             <th>Executar ?</th>
         </tr>
-        <tr>
-            <td>Teste 1</td>
-            <td>Não executado</td>
-            <td><a href="exec.php">Executar</a></td>
-        </tr>
-        <tr>
-            <td>Test 2</td>
-            <td>Não executado</td>
-            <td><a href="exec.php">Executar</a></td>
-        </tr>
-        <tr>
-            <td>Tarefa nE</td>
-            <td>Não executado</td>
-            <td><a href="exec.php">Executar</a></td>
-        </tr>
-        <tr>
-            <td>Teste 111</td>
-            <td>Executada</td>
-            <td></td>
-        </tr>
+        <?php
+        // Define the status mapping
+        $status_mapping = array(
+            0 => 'Não executado',
+            1 => 'Executando',
+            2 => 'Completado'
+        );
+
+        // Other code...
+
+        while ($row = pg_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+            echo "<td>" . htmlspecialchars($status_mapping[$row['status']]) . "</td>";
+            if ($row['status'] == 0) {
+                echo "<td><a href='exec.php?tid=" . htmlspecialchars($row['tid']) . "'>Executar</a></td>";
+            } elseif ($row['status'] == 1) {
+                echo "<td><a href='stop.php?tid=" . htmlspecialchars($row['tid']) . "'>Parar</a></td>";
+            } else {
+                echo "<td></td>";
+            }
+            echo "</tr>";
+        }
+        ?>
     </table>
 
-    <button>Cadastrar nova tarefa</button>
+    <button id="new_task">Cadastrar nova tarefa</button>
+
+    <div id="new_task_modal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="container">
+                <form action="insert_task.php" method="POST">
+                    <label for="tarefa_name"><b>Nome da tarefa</b>
+                        <input type="text" placeholder="Tarefa" name="tarefa_name" required>
+                    </label>
+
+                    <input type="hidden" name="user" value="dudu" />
+                    <input id="uuid_field" type="hidden" name="uuid" value="" />
+
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="pomodoro.js"></script>
 </body>
 </html>
