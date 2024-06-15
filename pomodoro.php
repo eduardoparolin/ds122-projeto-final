@@ -48,7 +48,7 @@
             echo "<td>" . htmlspecialchars($row['name']) . "</td>";
             echo "<td>" . htmlspecialchars($status_mapping[$row['status']]) . "</td>";
             if ($row['status'] == 0) {
-                echo "<td><a href='exec.php?tid=" . htmlspecialchars($row['tid']) . "'>Executar</a></td>";
+                echo "<td><a href='exec.php?tid=" . htmlspecialchars($row['tid']) . "' onclick='openModal()'>Executar</a></td>";
             } elseif ($row['status'] == 1) {
                 echo "<td><a href='stop.php?tid=" . htmlspecialchars($row['tid']) . "'>Parar</a></td>";
             } else {
@@ -76,6 +76,32 @@
 
                     <button type="submit">Salvar</button>
                 </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="executing_task_modal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="container">
+                Tarefa: <p id="title"></p>
+                <div class="timer">
+                    <div id="minutes">
+
+                    </div>:
+                    <div id="seconds">
+
+                    </div>
+                </div>
+
+                <button onclick="startCounter()">Start</button>
+                <button onclick="pause()">Pause</button>
+                <button onclick="stop()">Stop</button>
+
+                <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+                <script src="counter.js"></script>
             </div>
         </div>
 

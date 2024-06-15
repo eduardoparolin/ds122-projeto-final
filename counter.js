@@ -32,4 +32,6 @@ const stop = () => {
     interval = null;
     minutes.innerText = '00';
     seconds.innerText = '00';
+    var modal1 = document.getElementById("executing_task_modal");
+    modal1.style.display = "none";
 }

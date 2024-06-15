@@ -31,21 +31,5 @@
     </div>
 </div>
 
-<div class="timer">
-    <div id="minutes">
-
-    </div>:
-    <div id="seconds">
-
-    </div>
-</div>
-
-<button onclick="startCounter()">Start</button>
-<button onclick="pause()">Pause</button>
-<button onclick="stop()">Stop</button>
-
-<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-<script src="counter.js"></script>
-
 </body>
 </html>
