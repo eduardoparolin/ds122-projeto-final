@@ -86,7 +86,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="container">
-                Tarefa: <p id="title"></p>
+                Titulo: <p id="title"></p>
                 <div class="timer">
                     <div id="minutes">
 
