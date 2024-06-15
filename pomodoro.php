@@ -29,6 +29,7 @@
 
     <table>
         <tr>
+            <th>TID</th>
             <th>Tarefa</th>
             <th>Status</th>
             <th>Executar ?</th>
@@ -45,6 +46,7 @@
 
         while ($row = pg_fetch_assoc($result)) {
             echo "<tr>";
+            echo "<td>" . htmlspecialchars($row['tid']) . "</td>";
             echo "<td>" . htmlspecialchars($row['name']) . "</td>";
             echo "<td>" . htmlspecialchars($status_mapping[$row['status']]) . "</td>";
             if ($row['status'] == 0) {

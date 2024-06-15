@@ -13,6 +13,17 @@ WHERE tid = '$tid'";
 
 // Execute the SQL statement
 $result = pg_query($dbconn, $sql);
+//
+//if ($result) {
+//    echo "Usuário criado com sucesso! ";
+//} else {
+//    $error = pg_last_error($dbconn);
+//
+//    // you need to adapt this regex
+//    if (preg_match('/duplicate/i', $error)) {
+//        echo "Usuário já existente, ";
+//    }
+//}
 
 // Redirect back to the pomodoro.php page
 header("Location: pomodoro.php");

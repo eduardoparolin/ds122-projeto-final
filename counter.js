@@ -34,4 +34,32 @@ const stop = () => {
     seconds.innerText = '00';
     var modal1 = document.getElementById("executing_task_modal");
     modal1.style.display = "none";
+    let tid;
+    var table = document.getElementsByTagName('table')[0];
+    var rows = table.getElementsByTagName('tr');
+    for (var i = 0; i < rows.length; i++) {
+        var cols = rows[i].getElementsByTagName('td');
+        if (cols.length > 0 && cols[2].innerText === 'Executando') {
+            // Open the modal
+            tid = cols[0].innerText;
+            break;
+        }
+    }
+    fetch(`stop.php?tid=${tid}`, {
+        method: 'GET', headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    }).then(data => {
+        console.log('Success:', data);
+        setTimeout(() => {
+            location.reload();
+        }, 200);
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
 }

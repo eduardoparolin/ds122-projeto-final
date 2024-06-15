@@ -46,9 +46,9 @@ window.onload = function() {
     var rows = table.getElementsByTagName('tr');
     for (var i = 0; i < rows.length; i++) {
         var cols = rows[i].getElementsByTagName('td');
-        if (cols.length > 0 && cols[1].innerText === 'Executando') {
+        if (cols.length > 0 && cols[2].innerText === 'Executando') {
             // Open the modal
-            openModal(cols[0].innerText);
+            openModal(cols[1].innerText);
             break;
         }
     }
