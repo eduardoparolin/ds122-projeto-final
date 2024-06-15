@@ -1,90 +1,123 @@
-.titles {
+@font-face {
+    font-family: 'ArialRounded';
+    font-display: swap;
+    src: url('/fonts/ArialRounded/Arial_Rounded_MT.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ArialRounded';
+    font-display: swap;
+    src: url('/fonts/ArialRounded/Arial-Rounded-MT-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-weight: 300;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+}
 
-    .t-holder {
-        display: flex;
-    }
-    .t-image {
-        width: 44px;
-        height: 44px;
-    }
-    .welcome-title {
-        font-size: 3rem;
-    }
-    .sub-title {
-        font-size: 2rem;
-    }
+.titles {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .login-signup-page {
-        margin-top: 50px;
-        gap: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.t-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
+.welcome-title {
+    font-size: 3rem;
+    color: #e65b57;
+    margin-right: 10px;
+}
 
+.t-image {
+    width: 44px;
+    height: 44px;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #e65b57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-signup-page {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .timer {
     display: flex;
-}
-
-.signup-login-form {
-    margin-top: 30px;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
     font-weight: bold;
+    color: #e65b57;
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid #e65b57;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.timer div {
+    margin: 0 5px;
 }
+
+button {
+    padding: 10px 20px;
+    background-color: #e65b57;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #d14c4c;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
