@@ -12,7 +12,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
 //        echo $rows2;
         if ($rows2 == 1) {
 //            echo $rows2;
-            header('Location: '.'pomodoro.php');
+            header('Location: '.'pomodoro.php?user='.$user);
             die();
         } else {
             echo "Erro ao logar.. ";

@@ -23,7 +23,7 @@
         <input name="user" id="user" type="text">
 
         <label for="pass">Sua senha:</label>
-        <input name="pass" id="pass" type="text">
+        <input name="pass" id="pass" type="password">
 
         <button type="submit">Logar</button>
     </form>

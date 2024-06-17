@@ -18,10 +18,15 @@
     </div>
 
     <?php
+    if (empty($_GET['user'])) {
+        $user = 'eduardo';
+    } else {
+        $user = $_GET['user'];
+    }
     $conn_string = "host=localhost port=5432 dbname=postgres user=postgres password=senha123";
     $dbconn = pg_connect($conn_string);
 
-    $result = @pg_query($dbconn, "select * from aula_tasks where \"user\" = 'dudu'");
+    $result = @pg_query($dbconn, "select * from aula_tasks where \"user\" = '$user'");
 
 
     ?>
@@ -73,7 +78,7 @@
                         <input type="text" placeholder="Tarefa" name="tarefa_name" required>
                     </label>
 
-                    <input type="hidden" name="user" value="dudu" />
+                    <input type="hidden" name="user" value="<?php echo htmlspecialchars($user); ?>" />
                     <input id="uuid_field" type="hidden" name="uuid" value="" />
 
                     <button type="submit">Salvar</button>
