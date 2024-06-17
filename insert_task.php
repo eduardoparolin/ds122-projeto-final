@@ -5,7 +5,8 @@ $user = $_POST['user'];
 $uuid = $_POST['uuid'];
 
 // Connect to the database
-$conn_string = "host=localhost port=5432 dbname=postgres user=postgres password=senha123";
+$host = getenv('DB_HOST');
+$conn_string = "host=$host port=5432 dbname=postgres user=postgres password=$pass";
 $dbconn = pg_connect($conn_string);
 
 // Prepare the SQL statement

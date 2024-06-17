@@ -3,7 +3,8 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
 
-    $conn_string = "host=localhost port=5432 dbname=postgres user=postgres password=senha123";
+    $host = getenv('DB_HOST');
+    $conn_string = "host=$host port=5432 dbname=postgres user=postgres password=$pass";
     $dbconn = pg_connect($conn_string);
 
     $result = @pg_query($dbconn, "select * from aula_users where \"user\" = '$user' and pass = '$pass'");

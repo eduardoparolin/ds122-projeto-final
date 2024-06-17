@@ -23,7 +23,9 @@
     } else {
         $user = $_GET['user'];
     }
-    $conn_string = "host=localhost port=5432 dbname=postgres user=postgres password=senha123";
+    $host = getenv('DB_HOST');
+    $pass = getenv('DB_PASS');
+    $conn_string = "host=$host port=5432 dbname=postgres user=postgres password=$pass";
     $dbconn = pg_connect($conn_string);
 
     $result = @pg_query($dbconn, "select * from aula_tasks where \"user\" = '$user'");
